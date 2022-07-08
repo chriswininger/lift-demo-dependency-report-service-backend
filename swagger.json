@@ -1,0 +1,1431 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "an api for the dependency report service",
+    "version" : "v1",
+    "title" : "dependency-report-service-api"
+  },
+  "basePath" : "/api/v1",
+  "schemes" : [ "http", "https" ],
+  "paths" : {
+    "/api/health" : {
+      "get" : {
+        "summary" : "a basic health endpoint to determine if the service is running",
+        "description" : "",
+        "operationId" : "getHealth",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/HealthResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cyclone-dx" : {
+      "post" : {
+        "operationId" : "createReport",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Bom"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ReportModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cyclone-dx/{reportId}/cyclone-dx-json" : {
+      "get" : {
+        "summary" : "get cyclone dx from an existing report by report id",
+        "description" : "",
+        "operationId" : "getCycloneDx",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "reportId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Bom"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/reports/{reportId}/component-ref-types" : {
+      "get" : {
+        "summary" : "get cyclone dx from an existing report by report id",
+        "description" : "",
+        "operationId" : "getComponentReferenceTypeMap",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "reportId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "object",
+              "additionalProperties" : {
+                "$ref" : "#/definitions/ReferenceType"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/reports/{reportId}/components" : {
+      "get" : {
+        "summary" : "get a list of components with applied meta data for reporting via the report id",
+        "description" : "",
+        "operationId" : "getComponents",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "reportId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ReportComponent"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/reports/{reportId}/summary" : {
+      "get" : {
+        "summary" : "get summary information about the bill of materials",
+        "description" : "",
+        "operationId" : "getSummary",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "reportId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/ReportSummary"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Advisory" : {
+      "type" : "object",
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Affect" : {
+      "type" : "object",
+      "properties" : {
+        "ref" : {
+          "type" : "string"
+        },
+        "versions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Version"
+          }
+        }
+      }
+    },
+    "Analysis" : {
+      "type" : "object",
+      "properties" : {
+        "state" : {
+          "type" : "string",
+          "enum" : [ "resolved", "resolved_with_pedigree", "exploitable", "in_triage", "false_positive", "not_affected" ]
+        },
+        "justification" : {
+          "type" : "string",
+          "enum" : [ "code_not_present", "code_not_reachable", "requires_configuration", "requires_dependency", "requires_environment", "protected_by_compiler", "protected_at_runtime", "protected_at_perimeter", "protected_by_mitigating_control" ]
+        },
+        "response" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "enum" : [ "can_not_fix", "will_not_fix", "update", "rollback", "workaround_available" ]
+          }
+        },
+        "detail" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Ancestors" : {
+      "type" : "object",
+      "properties" : {
+        "components" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Component"
+          }
+        }
+      }
+    },
+    "AttachmentText" : {
+      "type" : "object",
+      "properties" : {
+        "encoding" : {
+          "type" : "string"
+        },
+        "contentType" : {
+          "type" : "string"
+        },
+        "content" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Attribute" : {
+      "type" : "object",
+      "properties" : {
+        "key" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Bom" : {
+      "type" : "object",
+      "properties" : {
+        "bomFormat" : {
+          "type" : "string"
+        },
+        "specVersion" : {
+          "type" : "string"
+        },
+        "serialNumber" : {
+          "type" : "string"
+        },
+        "version" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "metadata" : {
+          "$ref" : "#/definitions/Metadata"
+        },
+        "components" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Component"
+          }
+        },
+        "services" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Service"
+          }
+        },
+        "externalReferences" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExternalReference"
+          }
+        },
+        "dependencies" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Dependency"
+          }
+        },
+        "compositions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Composition"
+          }
+        },
+        "vulnerabilities" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Vulnerability"
+          }
+        },
+        "properties" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Property"
+          }
+        },
+        "signature" : {
+          "$ref" : "#/definitions/Signature"
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        },
+        "xmlns" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BomReference" : {
+      "type" : "object",
+      "properties" : {
+        "ref" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Commit" : {
+      "type" : "object",
+      "properties" : {
+        "uid" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "author" : {
+          "$ref" : "#/definitions/IdentifiableActionType"
+        },
+        "committer" : {
+          "$ref" : "#/definitions/IdentifiableActionType"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        }
+      }
+    },
+    "Component" : {
+      "type" : "object",
+      "properties" : {
+        "supplier" : {
+          "$ref" : "#/definitions/OrganizationalEntity"
+        },
+        "author" : {
+          "type" : "string"
+        },
+        "publisher" : {
+          "type" : "string"
+        },
+        "group" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "version" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "scope" : {
+          "type" : "string",
+          "enum" : [ "required", "optional", "excluded" ]
+        },
+        "hashes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Hash"
+          }
+        },
+        "licenses" : {
+          "$ref" : "#/definitions/LicenseChoice"
+        },
+        "copyright" : {
+          "type" : "string"
+        },
+        "cpe" : {
+          "type" : "string"
+        },
+        "purl" : {
+          "type" : "string"
+        },
+        "swid" : {
+          "$ref" : "#/definitions/Swid"
+        },
+        "modified" : {
+          "type" : "boolean"
+        },
+        "pedigree" : {
+          "$ref" : "#/definitions/Pedigree"
+        },
+        "externalReferences" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExternalReference"
+          }
+        },
+        "properties" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Property"
+          }
+        },
+        "components" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Component"
+          }
+        },
+        "evidence" : {
+          "$ref" : "#/definitions/Evidence"
+        },
+        "releaseNotes" : {
+          "$ref" : "#/definitions/ReleaseNotes"
+        },
+        "signature" : {
+          "$ref" : "#/definitions/Signature"
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        },
+        "mimeType" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string",
+          "enum" : [ "application", "framework", "library", "container", "operating-system", "device", "firmware", "file" ]
+        },
+        "bom-ref" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Composition" : {
+      "type" : "object",
+      "properties" : {
+        "aggregate" : {
+          "type" : "string",
+          "enum" : [ "complete", "incomplete", "incomplete_first_party_only", "incomplete_third_party_only", "unknown", "not_specified" ]
+        },
+        "assemblies" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/BomReference"
+          }
+        },
+        "dependencies" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/BomReference"
+          }
+        }
+      }
+    },
+    "Copyright" : {
+      "type" : "object",
+      "properties" : {
+        "text" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CountsBySeverity" : {
+      "type" : "object",
+      "properties" : {
+        "unknown" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "moderate" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "severe" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "critical" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "Credits" : {
+      "type" : "object",
+      "properties" : {
+        "organizations" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/OrganizationalEntity"
+          }
+        },
+        "individuals" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/OrganizationalContact"
+          }
+        }
+      }
+    },
+    "Dependency" : {
+      "type" : "object",
+      "properties" : {
+        "ref" : {
+          "type" : "string"
+        },
+        "dependsOn" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Dependency"
+          }
+        }
+      }
+    },
+    "Descendants" : {
+      "type" : "object",
+      "properties" : {
+        "components" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Component"
+          }
+        }
+      }
+    },
+    "Diff" : {
+      "type" : "object",
+      "properties" : {
+        "text" : {
+          "$ref" : "#/definitions/AttachmentText"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Evidence" : {
+      "type" : "object",
+      "properties" : {
+        "licenses" : {
+          "$ref" : "#/definitions/LicenseChoice"
+        },
+        "copyright" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Copyright"
+          }
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        }
+      }
+    },
+    "ExtensibleType" : {
+      "type" : "object",
+      "properties" : {
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        },
+        "namespace" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "attributes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Attribute"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ExternalReference" : {
+      "type" : "object"
+    },
+    "Hash" : {
+      "type" : "object",
+      "properties" : {
+        "alg" : {
+          "type" : "string",
+          "readOnly" : true
+        },
+        "content" : {
+          "type" : "string",
+          "readOnly" : true
+        }
+      }
+    },
+    "HealthResponse" : {
+      "type" : "object",
+      "required" : [ "status", "upTime" ],
+      "properties" : {
+        "status" : {
+          "type" : "string"
+        },
+        "upTime" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "IdentifiableActionType" : {
+      "type" : "object",
+      "properties" : {
+        "timestamp" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        }
+      }
+    },
+    "Issue" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "source" : {
+          "$ref" : "#/definitions/Source"
+        },
+        "references" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "type" : {
+          "type" : "string",
+          "enum" : [ "enhancement", "security", "defect" ]
+        }
+      }
+    },
+    "LicenseChoice" : {
+      "type" : "object",
+      "properties" : {
+        "expression" : {
+          "type" : "string"
+        },
+        "licenses" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/license"
+          }
+        }
+      }
+    },
+    "Metadata" : {
+      "type" : "object",
+      "properties" : {
+        "timestamp" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "tools" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Tool"
+          }
+        },
+        "authors" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/OrganizationalContact"
+          }
+        },
+        "component" : {
+          "$ref" : "#/definitions/Component"
+        },
+        "manufacture" : {
+          "$ref" : "#/definitions/OrganizationalEntity"
+        },
+        "supplier" : {
+          "$ref" : "#/definitions/OrganizationalEntity"
+        },
+        "licenses" : {
+          "$ref" : "#/definitions/LicenseChoice"
+        },
+        "properties" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Property"
+          }
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        }
+      }
+    },
+    "Notes" : {
+      "type" : "object",
+      "properties" : {
+        "locale" : {
+          "type" : "string"
+        },
+        "text" : {
+          "$ref" : "#/definitions/AttachmentText"
+        }
+      }
+    },
+    "OrganizationalContact" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "phone" : {
+          "type" : "string"
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        }
+      }
+    },
+    "OrganizationalEntity" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "contact" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/OrganizationalContact"
+          }
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        }
+      }
+    },
+    "Patch" : {
+      "type" : "object",
+      "properties" : {
+        "diff" : {
+          "$ref" : "#/definitions/Diff"
+        },
+        "resolves" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Issue"
+          }
+        },
+        "type" : {
+          "type" : "string",
+          "enum" : [ "backport", "unofficial", "monkey", "cherry-pick" ]
+        }
+      }
+    },
+    "Pedigree" : {
+      "type" : "object",
+      "properties" : {
+        "ancestors" : {
+          "$ref" : "#/definitions/Ancestors"
+        },
+        "descendants" : {
+          "$ref" : "#/definitions/Descendants"
+        },
+        "variants" : {
+          "$ref" : "#/definitions/Variants"
+        },
+        "commits" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Commit"
+          }
+        },
+        "patches" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Patch"
+          }
+        },
+        "notes" : {
+          "type" : "string"
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        }
+      }
+    },
+    "PercentBySeverity" : {
+      "type" : "object",
+      "required" : [ "percentCritical", "percentModerate", "percentSevere", "percentUnknown" ],
+      "properties" : {
+        "percentUnknown" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "percentModerate" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "percentSevere" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "percentCritical" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "Property" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        }
+      }
+    },
+    "PublicKey" : {
+      "type" : "object",
+      "properties" : {
+        "kty" : {
+          "type" : "string",
+          "enum" : [ "EC", "OKP", "RSA" ]
+        },
+        "crv" : {
+          "type" : "string",
+          "enum" : [ "P-256", "P-384", "P-521" ]
+        },
+        "x" : {
+          "type" : "string"
+        },
+        "y" : {
+          "type" : "string"
+        },
+        "e" : {
+          "type" : "string"
+        },
+        "n" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Rating" : {
+      "type" : "object",
+      "properties" : {
+        "source" : {
+          "$ref" : "#/definitions/Source"
+        },
+        "score" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "severity" : {
+          "type" : "string",
+          "enum" : [ "critical", "high", "medium", "low", "info", "none", "unknown" ]
+        },
+        "method" : {
+          "type" : "string",
+          "enum" : [ "CVSSv2", "CVSSv3", "CVSSv31", "OWASP", "other" ]
+        },
+        "vector" : {
+          "type" : "string"
+        },
+        "justification" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Reference" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "source" : {
+          "$ref" : "#/definitions/Source"
+        }
+      }
+    },
+    "ReferenceType" : {
+      "type" : "object",
+      "properties" : {
+        "isDirect" : {
+          "type" : "boolean",
+          "readOnly" : true
+        },
+        "isUnknown" : {
+          "type" : "boolean",
+          "readOnly" : true
+        },
+        "isTransitive" : {
+          "type" : "boolean",
+          "readOnly" : true
+        },
+        "isProject" : {
+          "type" : "boolean",
+          "readOnly" : true
+        }
+      }
+    },
+    "ReleaseNotes" : {
+      "type" : "object",
+      "properties" : {
+        "type" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "featuredImage" : {
+          "type" : "string"
+        },
+        "socialImage" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "timestamp" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "aliases" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "tags" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "resolves" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Resolves"
+          }
+        },
+        "notes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Notes"
+          }
+        },
+        "properties" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Property"
+          }
+        }
+      }
+    },
+    "ReportComponent" : {
+      "type" : "object",
+      "required" : [ "displayName", "occurrences", "referenceType", "vulnerabilityCount" ],
+      "properties" : {
+        "purl" : {
+          "type" : "string"
+        },
+        "displayName" : {
+          "type" : "string"
+        },
+        "referenceType" : {
+          "$ref" : "#/definitions/ReferenceType"
+        },
+        "occurrences" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "vulnerabilityCount" : {
+          "$ref" : "#/definitions/CountsBySeverity"
+        }
+      }
+    },
+    "ReportModel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "createdAt" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "cycloneDX" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ReportSummary" : {
+      "type" : "object",
+      "required" : [ "countsBySeverity", "percentBySeverity", "reportId", "totalComponentCount", "totalVulnerabilityCount", "totalVulnerableComponentCount" ],
+      "properties" : {
+        "reportId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "countsBySeverity" : {
+          "$ref" : "#/definitions/CountsBySeverity"
+        },
+        "totalVulnerabilityCount" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "totalVulnerableComponentCount" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "totalComponentCount" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "percentBySeverity" : {
+          "$ref" : "#/definitions/PercentBySeverity"
+        }
+      }
+    },
+    "Resolves" : {
+      "type" : "object",
+      "properties" : {
+        "type" : {
+          "type" : "string",
+          "enum" : [ "defect", "enhancement", "security" ]
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "source" : {
+          "$ref" : "#/definitions/Source"
+        },
+        "references" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "Service" : {
+      "type" : "object",
+      "properties" : {
+        "provider" : {
+          "$ref" : "#/definitions/OrganizationalEntity"
+        },
+        "group" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "version" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "endpoints" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "authenticated" : {
+          "type" : "boolean"
+        },
+        "x-trust-boundary" : {
+          "type" : "boolean"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ServiceData"
+          }
+        },
+        "licenses" : {
+          "$ref" : "#/definitions/LicenseChoice"
+        },
+        "externalReferences" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExternalReference"
+          }
+        },
+        "properties" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Property"
+          }
+        },
+        "services" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Service"
+          }
+        },
+        "releaseNotes" : {
+          "$ref" : "#/definitions/ReleaseNotes"
+        },
+        "signature" : {
+          "$ref" : "#/definitions/Signature"
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        },
+        "bom-ref" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ServiceData" : {
+      "type" : "object",
+      "properties" : {
+        "flow" : {
+          "type" : "string",
+          "readOnly" : true,
+          "enum" : [ "inbound", "outbound", "bi-directional", "unknown" ]
+        },
+        "classification" : {
+          "type" : "string",
+          "readOnly" : true
+        }
+      }
+    },
+    "Signature" : {
+      "type" : "object",
+      "properties" : {
+        "signers" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Signature"
+          }
+        },
+        "algorithm" : {
+          "type" : "string",
+          "enum" : [ "RS256", "RS384", "RS512", "PS256", "PS384", "PS512", "ES256", "ES384", "ES512", "Ed25519", "Ed448", "HS256", "HS384", "HS512" ]
+        },
+        "keyId" : {
+          "type" : "string"
+        },
+        "publicKey" : {
+          "$ref" : "#/definitions/PublicKey"
+        },
+        "certificatePath" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "excludes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Source" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Swid" : {
+      "type" : "object",
+      "properties" : {
+        "tagId" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "version" : {
+          "type" : "string"
+        },
+        "tagVersion" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "patch" : {
+          "type" : "boolean"
+        },
+        "text" : {
+          "$ref" : "#/definitions/AttachmentText"
+        }
+      }
+    },
+    "Tool" : {
+      "type" : "object",
+      "properties" : {
+        "vendor" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "version" : {
+          "type" : "string"
+        },
+        "hashes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Hash"
+          }
+        },
+        "externalReferences" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExternalReference"
+          }
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        }
+      }
+    },
+    "Variants" : {
+      "type" : "object",
+      "properties" : {
+        "components" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Component"
+          }
+        }
+      }
+    },
+    "Version" : {
+      "type" : "object",
+      "properties" : {
+        "version" : {
+          "type" : "string"
+        },
+        "range" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string",
+          "enum" : [ "affected", "unaffected", "unknown" ]
+        }
+      }
+    },
+    "Vulnerability" : {
+      "type" : "object",
+      "properties" : {
+        "bom-ref" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "source" : {
+          "$ref" : "#/definitions/Source"
+        },
+        "references" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Reference"
+          }
+        },
+        "ratings" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Rating"
+          }
+        },
+        "cwes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "detail" : {
+          "type" : "string"
+        },
+        "recommendation" : {
+          "type" : "string"
+        },
+        "advisories" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Advisory"
+          }
+        },
+        "created" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "published" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updated" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "credits" : {
+          "$ref" : "#/definitions/Credits"
+        },
+        "tools" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Tool"
+          }
+        },
+        "analysis" : {
+          "$ref" : "#/definitions/Analysis"
+        },
+        "affects" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Affect"
+          }
+        },
+        "properties" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Property"
+          }
+        }
+      }
+    },
+    "license" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "text" : {
+          "readOnly" : true,
+          "$ref" : "#/definitions/AttachmentText"
+        },
+        "url" : {
+          "type" : "string"
+        },
+        "extensibleTypes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ExtensibleType"
+          }
+        }
+      }
+    }
+  }
+}

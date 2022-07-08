@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.6.2</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <groupId>com.sonatype.lift</groupId>
+  <artifactId>dependency-report-service</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>dependency-report-service</name>
+  <description>A demonstration of a stand-alone dependency visualization service which consumes cyclone</description>
+
+  <properties>
+    <java.version>17</java.version>
+    <kotlin.version>1.6.10</kotlin.version>
+
+    <skd-generation-path>${project.basedir}/../dependency-report-service-sdk-ts</skd-generation-path>
+    <swagger-spec-dir>${project.basedir}/</swagger-spec-dir>
+    <swagger-spec-file-name>swagger</swagger-spec-file-name>
+
+    <node.version>v16.14.0</node.version>
+    <npm.version>8.5.2</npm.version>
+
+    <micrometer.version>1.8.3</micrometer.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-logging</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.module</groupId>
+      <artifactId>jackson-module-kotlin</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-reflect</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.cyclonedx</groupId>
+      <artifactId>cyclonedx-core-java</artifactId>
+      <version>7.1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-registry-statsd</artifactId>
+      <version>${micrometer.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.datadoghq</groupId>
+      <artifactId>java-dogstatsd-client</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>io.swagger.core.v3</groupId>
+      <artifactId>swagger-project</artifactId>
+      <version>2.1.13</version>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-annotations</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.swagger.core.v3</groupId>
+      <artifactId>swagger-core</artifactId>
+      <version>2.1.11</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.package-url</groupId>
+      <artifactId>packageurl-java</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+    <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-maven-plugin</artifactId>
+        <configuration>
+          <args>
+            <arg>-Xjsr305=strict</arg>
+          </args>
+          <compilerPlugins>
+            <plugin>spring</plugin>
+          </compilerPlugins>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-allopen</artifactId>
+            <version>${kotlin.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+      <!-- === Code Generation ===  -->
+      <!-- Delete existing generated directory to clear stale files -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+
+        <executions>
+          <execution>
+            <id>delete-generated-skd</id>
+            <phase>package</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <configuration>
+          <executable>bash</executable>
+          <workingDirectory>${project.basedir}/scripts</workingDirectory>
+          <commandlineArgs>rm-generated-sdk.sh ${skd-generation-path}</commandlineArgs>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.github.kongchen</groupId>
+        <artifactId>swagger-maven-plugin</artifactId>
+        <version>3.1.8</version>
+        <configuration>
+          <apiSources>
+            <apiSource>
+              <springmvc>true</springmvc>
+              <locations>
+                <location>com.sonatype.lift.dependencyreportservice.api</location>
+              </locations>
+              <schemes>http,https</schemes>
+              <basePath>/api/v1</basePath>
+              <info>
+                <title>dependency-report-service-api</title>
+                <version>v1</version>
+                <description>an api for the dependency report service</description>
+              </info>
+
+              <outputFormats>json</outputFormats>
+              <swaggerDirectory>${swagger-spec-dir}</swaggerDirectory>
+              <swaggerFileName>${swagger-spec-file-name}</swaggerFileName>
+              <attachSwaggerArtifact>true</attachSwaggerArtifact>
+            </apiSource>
+          </apiSources>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Generate a ts SDK based on the swagger -->
+      <plugin>
+        <groupId>org.openapitools</groupId>
+        <artifactId>openapi-generator-maven-plugin</artifactId>
+        <version>5.3.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <generatorName>typescript-fetch</generatorName>
+              <additionalProperties>
+                <additionalProperty>npmName=dependency-report-service-sdk-ts</additionalProperty>
+                <additionalProperty>npmAuthor=Sonatype</additionalProperty>
+                <additionalProperty>npmVersion=0.0.1</additionalProperty>
+                <additionalProperty>supportsES6=true</additionalProperty>
+                <additionalProperty>modelPropertyNaming=original</additionalProperty>
+                <additionalProperty>useSingleRequestParameter=false</additionalProperty>
+              </additionalProperties>
+
+              <inputSpec>${swagger-spec-dir}/${swagger-spec-file-name}.json</inputSpec>
+              <output>${skd-generation-path}</output>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Build the ts SDK, this allows us to use it through npm install -->
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <configuration>
+              <workingDirectory>${skd-generation-path}</workingDirectory>
+              <!-- See https://nodejs.org/en/download/ for latest node and npm (lts) versions -->
+              <nodeVersion>${node.version}</nodeVersion>
+              <npmVersion>${npm.version}</npmVersion>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>npm install</id>
+            <phase>package</phase>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <workingDirectory>${skd-generation-path}</workingDirectory>
+              <arguments>install</arguments>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>npm build</id>
+            <phase>package</phase>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <workingDirectory>${skd-generation-path}</workingDirectory>
+              <arguments>run build</arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- ======================= -->
+
+      <!-- skip tests for now, the test phase wants a db connection which makes builds fail, we don't have tests-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

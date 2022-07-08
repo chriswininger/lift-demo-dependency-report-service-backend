@@ -1,0 +1,2084 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.4",
+  "version" : 1,
+  "metadata" : {
+    "timestamp" : "2021-12-29T16:33:38Z",
+    "component" : {
+      "name" : "scanned-application",
+      "version" : "1.0",
+      "type" : "application",
+      "bom-ref" : "scanned-application"
+    }
+  },
+  "components" : [
+    {
+      "name" : "cli-worm",
+      "purl" : "pkg:npm/cli-worm",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/cli-worm"
+    },
+    {
+      "name" : "log4js",
+      "version" : "3.0.6",
+      "purl" : "pkg:npm/log4js@3.0.6",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/log4js@3.0.6"
+    },
+    {
+      "name" : "streamroller",
+      "version" : "0.7.0",
+      "purl" : "pkg:npm/streamroller@0.7.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/streamroller@0.7.0"
+    },
+    {
+      "name" : "readable-stream",
+      "version" : "2.3.7",
+      "purl" : "pkg:npm/readable-stream@2.3.7",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/readable-stream@2.3.7"
+    },
+    {
+      "name" : "safe-buffer",
+      "version" : "5.1.2",
+      "purl" : "pkg:npm/safe-buffer@5.1.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/safe-buffer@5.1.2"
+    },
+    {
+      "name" : "core-util-is",
+      "version" : "1.0.2",
+      "purl" : "pkg:npm/core-util-is@1.0.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/core-util-is@1.0.2"
+    },
+    {
+      "name" : "string_decoder",
+      "version" : "1.1.1",
+      "purl" : "pkg:npm/string_decoder@1.1.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/string_decoder@1.1.1"
+    },
+    {
+      "name" : "isarray",
+      "version" : "1.0.0",
+      "purl" : "pkg:npm/isarray@1.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/isarray@1.0.0"
+    },
+    {
+      "name" : "inherits",
+      "version" : "2.0.4",
+      "purl" : "pkg:npm/inherits@2.0.4",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/inherits@2.0.4"
+    },
+    {
+      "name" : "process-nextick-args",
+      "version" : "2.0.1",
+      "purl" : "pkg:npm/process-nextick-args@2.0.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/process-nextick-args@2.0.1"
+    },
+    {
+      "name" : "util-deprecate",
+      "version" : "1.0.2",
+      "purl" : "pkg:npm/util-deprecate@1.0.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/util-deprecate@1.0.2"
+    },
+    {
+      "name" : "mkdirp",
+      "version" : "0.5.5",
+      "purl" : "pkg:npm/mkdirp@0.5.5",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/mkdirp@0.5.5"
+    },
+    {
+      "name" : "minimist",
+      "version" : "1.2.5",
+      "purl" : "pkg:npm/minimist@1.2.5",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/minimist@1.2.5"
+    },
+    {
+      "name" : "debug",
+      "version" : "3.2.6",
+      "purl" : "pkg:npm/debug@3.2.6",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/debug@3.2.6"
+    },
+    {
+      "name" : "ms",
+      "version" : "2.1.2",
+      "purl" : "pkg:npm/ms@2.1.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/ms@2.1.2"
+    },
+    {
+      "name" : "date-format",
+      "version" : "1.2.0",
+      "purl" : "pkg:npm/date-format@1.2.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/date-format@1.2.0"
+    },
+    {
+      "name" : "circular-json",
+      "version" : "0.5.9",
+      "purl" : "pkg:npm/circular-json@0.5.9",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/circular-json@0.5.9"
+    },
+    {
+      "name" : "rfdc",
+      "version" : "1.1.4",
+      "purl" : "pkg:npm/rfdc@1.1.4",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/rfdc@1.1.4"
+    },
+    {
+      "name" : "sqlite3",
+      "version" : "5.0.0",
+      "purl" : "pkg:npm/sqlite3@5.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/sqlite3@5.0.0"
+    },
+    {
+      "name" : "node-pre-gyp",
+      "version" : "0.11.0",
+      "purl" : "pkg:npm/node-pre-gyp@0.11.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/node-pre-gyp@0.11.0"
+    },
+    {
+      "name" : "rc",
+      "version" : "1.2.8",
+      "purl" : "pkg:npm/rc@1.2.8",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/rc@1.2.8"
+    },
+    {
+      "name" : "strip-json-comments",
+      "version" : "2.0.1",
+      "purl" : "pkg:npm/strip-json-comments@2.0.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/strip-json-comments@2.0.1"
+    },
+    {
+      "name" : "deep-extend",
+      "version" : "0.6.0",
+      "purl" : "pkg:npm/deep-extend@0.6.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/deep-extend@0.6.0"
+    },
+    {
+      "name" : "ini",
+      "version" : "1.3.5",
+      "purl" : "pkg:npm/ini@1.3.5",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/ini@1.3.5"
+    },
+    {
+      "name" : "detect-libc",
+      "version" : "1.0.3",
+      "purl" : "pkg:npm/detect-libc@1.0.3",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/detect-libc@1.0.3"
+    },
+    {
+      "name" : "rimraf",
+      "version" : "2.7.1",
+      "purl" : "pkg:npm/rimraf@2.7.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/rimraf@2.7.1"
+    },
+    {
+      "name" : "glob",
+      "version" : "7.1.6",
+      "purl" : "pkg:npm/glob@7.1.6",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/glob@7.1.6"
+    },
+    {
+      "name" : "fs.realpath",
+      "version" : "1.0.0",
+      "purl" : "pkg:npm/fs.realpath@1.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/fs.realpath@1.0.0"
+    },
+    {
+      "name" : "minimatch",
+      "version" : "3.0.4",
+      "purl" : "pkg:npm/minimatch@3.0.4",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/minimatch@3.0.4"
+    },
+    {
+      "name" : "brace-expansion",
+      "version" : "1.1.11",
+      "purl" : "pkg:npm/brace-expansion@1.1.11",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/brace-expansion@1.1.11"
+    },
+    {
+      "name" : "balanced-match",
+      "version" : "1.0.0",
+      "purl" : "pkg:npm/balanced-match@1.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/balanced-match@1.0.0"
+    },
+    {
+      "name" : "concat-map",
+      "version" : "0.0.1",
+      "purl" : "pkg:npm/concat-map@0.0.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/concat-map@0.0.1"
+    },
+    {
+      "name" : "once",
+      "version" : "1.4.0",
+      "purl" : "pkg:npm/once@1.4.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/once@1.4.0"
+    },
+    {
+      "name" : "wrappy",
+      "version" : "1.0.2",
+      "purl" : "pkg:npm/wrappy@1.0.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/wrappy@1.0.2"
+    },
+    {
+      "name" : "path-is-absolute",
+      "version" : "1.0.1",
+      "purl" : "pkg:npm/path-is-absolute@1.0.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/path-is-absolute@1.0.1"
+    },
+    {
+      "name" : "inflight",
+      "version" : "1.0.6",
+      "purl" : "pkg:npm/inflight@1.0.6",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/inflight@1.0.6"
+    },
+    {
+      "name" : "npmlog",
+      "version" : "4.1.2",
+      "purl" : "pkg:npm/npmlog@4.1.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/npmlog@4.1.2"
+    },
+    {
+      "name" : "set-blocking",
+      "version" : "2.0.0",
+      "purl" : "pkg:npm/set-blocking@2.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/set-blocking@2.0.0"
+    },
+    {
+      "name" : "are-we-there-yet",
+      "version" : "1.1.5",
+      "purl" : "pkg:npm/are-we-there-yet@1.1.5",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/are-we-there-yet@1.1.5"
+    },
+    {
+      "name" : "delegates",
+      "version" : "1.0.0",
+      "purl" : "pkg:npm/delegates@1.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/delegates@1.0.0"
+    },
+    {
+      "name" : "gauge",
+      "version" : "2.7.4",
+      "purl" : "pkg:npm/gauge@2.7.4",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/gauge@2.7.4"
+    },
+    {
+      "name" : "wide-align",
+      "version" : "1.1.3",
+      "purl" : "pkg:npm/wide-align@1.1.3",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/wide-align@1.1.3"
+    },
+    {
+      "name" : "string-width",
+      "version" : "1.0.2",
+      "purl" : "pkg:npm/string-width@1.0.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/string-width@1.0.2"
+    },
+    {
+      "name" : "is-fullwidth-code-point",
+      "version" : "1.0.0",
+      "purl" : "pkg:npm/is-fullwidth-code-point@1.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/is-fullwidth-code-point@1.0.0"
+    },
+    {
+      "name" : "number-is-nan",
+      "version" : "1.0.1",
+      "purl" : "pkg:npm/number-is-nan@1.0.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/number-is-nan@1.0.1"
+    },
+    {
+      "name" : "code-point-at",
+      "version" : "1.1.0",
+      "purl" : "pkg:npm/code-point-at@1.1.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/code-point-at@1.1.0"
+    },
+    {
+      "name" : "strip-ansi",
+      "version" : "3.0.1",
+      "purl" : "pkg:npm/strip-ansi@3.0.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/strip-ansi@3.0.1"
+    },
+    {
+      "name" : "ansi-regex",
+      "version" : "2.1.1",
+      "purl" : "pkg:npm/ansi-regex@2.1.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/ansi-regex@2.1.1"
+    },
+    {
+      "name" : "has-unicode",
+      "version" : "2.0.1",
+      "purl" : "pkg:npm/has-unicode@2.0.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/has-unicode@2.0.1"
+    },
+    {
+      "name" : "console-control-strings",
+      "version" : "1.1.0",
+      "purl" : "pkg:npm/console-control-strings@1.1.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/console-control-strings@1.1.0"
+    },
+    {
+      "name" : "object-assign",
+      "version" : "4.1.1",
+      "purl" : "pkg:npm/object-assign@4.1.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/object-assign@4.1.1"
+    },
+    {
+      "name" : "signal-exit",
+      "version" : "3.0.3",
+      "purl" : "pkg:npm/signal-exit@3.0.3",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/signal-exit@3.0.3"
+    },
+    {
+      "name" : "aproba",
+      "version" : "1.2.0",
+      "purl" : "pkg:npm/aproba@1.2.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/aproba@1.2.0"
+    },
+    {
+      "name" : "needle",
+      "version" : "2.5.2",
+      "purl" : "pkg:npm/needle@2.5.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/needle@2.5.2"
+    },
+    {
+      "name" : "sax",
+      "version" : "1.2.4",
+      "purl" : "pkg:npm/sax@1.2.4",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/sax@1.2.4"
+    },
+    {
+      "name" : "iconv-lite",
+      "version" : "0.4.24",
+      "purl" : "pkg:npm/iconv-lite@0.4.24",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/iconv-lite@0.4.24"
+    },
+    {
+      "name" : "safer-buffer",
+      "version" : "2.1.2",
+      "purl" : "pkg:npm/safer-buffer@2.1.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/safer-buffer@2.1.2"
+    },
+    {
+      "name" : "npm-packlist",
+      "version" : "1.4.8",
+      "purl" : "pkg:npm/npm-packlist@1.4.8",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/npm-packlist@1.4.8"
+    },
+    {
+      "name" : "npm-bundled",
+      "version" : "1.1.1",
+      "purl" : "pkg:npm/npm-bundled@1.1.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/npm-bundled@1.1.1"
+    },
+    {
+      "name" : "npm-normalize-package-bin",
+      "version" : "1.0.1",
+      "purl" : "pkg:npm/npm-normalize-package-bin@1.0.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/npm-normalize-package-bin@1.0.1"
+    },
+    {
+      "name" : "ignore-walk",
+      "version" : "3.0.3",
+      "purl" : "pkg:npm/ignore-walk@3.0.3",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/ignore-walk@3.0.3"
+    },
+    {
+      "name" : "semver",
+      "version" : "5.3.0",
+      "purl" : "pkg:npm/semver@5.3.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/semver@5.3.0"
+    },
+    {
+      "name" : "nopt",
+      "version" : "4.0.3",
+      "purl" : "pkg:npm/nopt@4.0.3",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/nopt@4.0.3"
+    },
+    {
+      "name" : "abbrev",
+      "version" : "1.1.1",
+      "purl" : "pkg:npm/abbrev@1.1.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/abbrev@1.1.1"
+    },
+    {
+      "name" : "osenv",
+      "version" : "0.1.5",
+      "purl" : "pkg:npm/osenv@0.1.5",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/osenv@0.1.5"
+    },
+    {
+      "name" : "os-homedir",
+      "version" : "1.0.2",
+      "purl" : "pkg:npm/os-homedir@1.0.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/os-homedir@1.0.2"
+    },
+    {
+      "name" : "os-tmpdir",
+      "version" : "1.0.2",
+      "purl" : "pkg:npm/os-tmpdir@1.0.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/os-tmpdir@1.0.2"
+    },
+    {
+      "name" : "tar",
+      "version" : "4.4.13",
+      "purl" : "pkg:npm/tar@4.4.13",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/tar@4.4.13"
+    },
+    {
+      "name" : "minizlib",
+      "version" : "1.3.3",
+      "purl" : "pkg:npm/minizlib@1.3.3",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/minizlib@1.3.3"
+    },
+    {
+      "name" : "minipass",
+      "version" : "2.9.0",
+      "purl" : "pkg:npm/minipass@2.9.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/minipass@2.9.0"
+    },
+    {
+      "name" : "yallist",
+      "version" : "3.1.1",
+      "purl" : "pkg:npm/yallist@3.1.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/yallist@3.1.1"
+    },
+    {
+      "name" : "fs-minipass",
+      "version" : "1.2.7",
+      "purl" : "pkg:npm/fs-minipass@1.2.7",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/fs-minipass@1.2.7"
+    },
+    {
+      "name" : "chownr",
+      "version" : "1.1.4",
+      "purl" : "pkg:npm/chownr@1.1.4",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/chownr@1.1.4"
+    },
+    {
+      "name" : "node-gyp",
+      "version" : "3.8.0",
+      "purl" : "pkg:npm/node-gyp@3.8.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/node-gyp@3.8.0"
+    },
+    {
+      "name" : "request",
+      "version" : "2.88.2",
+      "purl" : "pkg:npm/request@2.88.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/request@2.88.2"
+    },
+    {
+      "name" : "form-data",
+      "version" : "2.3.3",
+      "purl" : "pkg:npm/form-data@2.3.3",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/form-data@2.3.3"
+    },
+    {
+      "name" : "mime-types",
+      "version" : "2.1.27",
+      "purl" : "pkg:npm/mime-types@2.1.27",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/mime-types@2.1.27"
+    },
+    {
+      "name" : "mime-db",
+      "version" : "1.44.0",
+      "purl" : "pkg:npm/mime-db@1.44.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/mime-db@1.44.0"
+    },
+    {
+      "name" : "combined-stream",
+      "version" : "1.0.8",
+      "purl" : "pkg:npm/combined-stream@1.0.8",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/combined-stream@1.0.8"
+    },
+    {
+      "name" : "delayed-stream",
+      "version" : "1.0.0",
+      "purl" : "pkg:npm/delayed-stream@1.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/delayed-stream@1.0.0"
+    },
+    {
+      "name" : "asynckit",
+      "version" : "0.4.0",
+      "purl" : "pkg:npm/asynckit@0.4.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/asynckit@0.4.0"
+    },
+    {
+      "name" : "tough-cookie",
+      "version" : "2.5.0",
+      "purl" : "pkg:npm/tough-cookie@2.5.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/tough-cookie@2.5.0"
+    },
+    {
+      "name" : "psl",
+      "version" : "1.8.0",
+      "purl" : "pkg:npm/psl@1.8.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/psl@1.8.0"
+    },
+    {
+      "name" : "punycode",
+      "version" : "2.1.1",
+      "purl" : "pkg:npm/punycode@2.1.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/punycode@2.1.1"
+    },
+    {
+      "name" : "aws4",
+      "version" : "1.11.0",
+      "purl" : "pkg:npm/aws4@1.11.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/aws4@1.11.0"
+    },
+    {
+      "name" : "aws-sign2",
+      "version" : "0.7.0",
+      "purl" : "pkg:npm/aws-sign2@0.7.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/aws-sign2@0.7.0"
+    },
+    {
+      "name" : "qs",
+      "version" : "6.5.2",
+      "purl" : "pkg:npm/qs@6.5.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/qs@6.5.2"
+    },
+    {
+      "name" : "isstream",
+      "version" : "0.1.2",
+      "purl" : "pkg:npm/isstream@0.1.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/isstream@0.1.2"
+    },
+    {
+      "name" : "tunnel-agent",
+      "version" : "0.6.0",
+      "purl" : "pkg:npm/tunnel-agent@0.6.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/tunnel-agent@0.6.0"
+    },
+    {
+      "name" : "forever-agent",
+      "version" : "0.6.1",
+      "purl" : "pkg:npm/forever-agent@0.6.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/forever-agent@0.6.1"
+    },
+    {
+      "name" : "uuid",
+      "version" : "3.4.0",
+      "purl" : "pkg:npm/uuid@3.4.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/uuid@3.4.0"
+    },
+    {
+      "name" : "oauth-sign",
+      "version" : "0.9.0",
+      "purl" : "pkg:npm/oauth-sign@0.9.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/oauth-sign@0.9.0"
+    },
+    {
+      "name" : "http-signature",
+      "version" : "1.2.0",
+      "purl" : "pkg:npm/http-signature@1.2.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/http-signature@1.2.0"
+    },
+    {
+      "name" : "sshpk",
+      "version" : "1.16.1",
+      "purl" : "pkg:npm/sshpk@1.16.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/sshpk@1.16.1"
+    },
+    {
+      "name" : "bcrypt-pbkdf",
+      "version" : "1.0.2",
+      "purl" : "pkg:npm/bcrypt-pbkdf@1.0.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/bcrypt-pbkdf@1.0.2"
+    },
+    {
+      "name" : "tweetnacl",
+      "version" : "0.14.5",
+      "purl" : "pkg:npm/tweetnacl@0.14.5",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/tweetnacl@0.14.5"
+    },
+    {
+      "name" : "jsbn",
+      "version" : "0.1.1",
+      "purl" : "pkg:npm/jsbn@0.1.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/jsbn@0.1.1"
+    },
+    {
+      "name" : "dashdash",
+      "version" : "1.14.1",
+      "purl" : "pkg:npm/dashdash@1.14.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/dashdash@1.14.1"
+    },
+    {
+      "name" : "assert-plus",
+      "version" : "1.0.0",
+      "purl" : "pkg:npm/assert-plus@1.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/assert-plus@1.0.0"
+    },
+    {
+      "name" : "ecc-jsbn",
+      "version" : "0.1.2",
+      "purl" : "pkg:npm/ecc-jsbn@0.1.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/ecc-jsbn@0.1.2"
+    },
+    {
+      "name" : "asn1",
+      "version" : "0.2.4",
+      "purl" : "pkg:npm/asn1@0.2.4",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/asn1@0.2.4"
+    },
+    {
+      "name" : "getpass",
+      "version" : "0.1.7",
+      "purl" : "pkg:npm/getpass@0.1.7",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/getpass@0.1.7"
+    },
+    {
+      "name" : "jsprim",
+      "version" : "1.4.1",
+      "purl" : "pkg:npm/jsprim@1.4.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/jsprim@1.4.1"
+    },
+    {
+      "name" : "verror",
+      "version" : "1.10.0",
+      "purl" : "pkg:npm/verror@1.10.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/verror@1.10.0"
+    },
+    {
+      "name" : "extsprintf",
+      "version" : "1.3.0",
+      "purl" : "pkg:npm/extsprintf@1.3.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/extsprintf@1.3.0"
+    },
+    {
+      "name" : "json-schema",
+      "version" : "0.2.3",
+      "purl" : "pkg:npm/json-schema@0.2.3",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/json-schema@0.2.3"
+    },
+    {
+      "name" : "is-typedarray",
+      "version" : "1.0.0",
+      "purl" : "pkg:npm/is-typedarray@1.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/is-typedarray@1.0.0"
+    },
+    {
+      "name" : "har-validator",
+      "version" : "5.1.5",
+      "purl" : "pkg:npm/har-validator@5.1.5",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/har-validator@5.1.5"
+    },
+    {
+      "name" : "ajv",
+      "version" : "6.12.6",
+      "purl" : "pkg:npm/ajv@6.12.6",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/ajv@6.12.6"
+    },
+    {
+      "name" : "fast-json-stable-stringify",
+      "version" : "2.1.0",
+      "purl" : "pkg:npm/fast-json-stable-stringify@2.1.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/fast-json-stable-stringify@2.1.0"
+    },
+    {
+      "name" : "json-schema-traverse",
+      "version" : "0.4.1",
+      "purl" : "pkg:npm/json-schema-traverse@0.4.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/json-schema-traverse@0.4.1"
+    },
+    {
+      "name" : "fast-deep-equal",
+      "version" : "3.1.3",
+      "purl" : "pkg:npm/fast-deep-equal@3.1.3",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/fast-deep-equal@3.1.3"
+    },
+    {
+      "name" : "uri-js",
+      "version" : "4.4.0",
+      "purl" : "pkg:npm/uri-js@4.4.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/uri-js@4.4.0"
+    },
+    {
+      "name" : "har-schema",
+      "version" : "2.0.0",
+      "purl" : "pkg:npm/har-schema@2.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/har-schema@2.0.0"
+    },
+    {
+      "name" : "json-stringify-safe",
+      "version" : "5.0.1",
+      "purl" : "pkg:npm/json-stringify-safe@5.0.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/json-stringify-safe@5.0.1"
+    },
+    {
+      "name" : "performance-now",
+      "version" : "2.1.0",
+      "purl" : "pkg:npm/performance-now@2.1.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/performance-now@2.1.0"
+    },
+    {
+      "name" : "caseless",
+      "version" : "0.12.0",
+      "purl" : "pkg:npm/caseless@0.12.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/caseless@0.12.0"
+    },
+    {
+      "name" : "extend",
+      "version" : "3.0.2",
+      "purl" : "pkg:npm/extend@3.0.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/extend@3.0.2"
+    },
+    {
+      "name" : "which",
+      "version" : "1.3.1",
+      "purl" : "pkg:npm/which@1.3.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/which@1.3.1"
+    },
+    {
+      "name" : "isexe",
+      "version" : "2.0.0",
+      "purl" : "pkg:npm/isexe@2.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/isexe@2.0.0"
+    },
+    {
+      "name" : "tar",
+      "version" : "2.2.2",
+      "purl" : "pkg:npm/tar@2.2.2",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/tar@2.2.2"
+    },
+    {
+      "name" : "fstream",
+      "version" : "1.0.12",
+      "purl" : "pkg:npm/fstream@1.0.12",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/fstream@1.0.12"
+    },
+    {
+      "name" : "graceful-fs",
+      "version" : "4.2.4",
+      "purl" : "pkg:npm/graceful-fs@4.2.4",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/graceful-fs@4.2.4"
+    },
+    {
+      "name" : "mkdirp",
+      "version" : "1.0.4",
+      "purl" : "pkg:npm/mkdirp@1.0.4",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/mkdirp@1.0.4"
+    },
+    {
+      "name" : "block-stream",
+      "version" : "0.0.9",
+      "purl" : "pkg:npm/block-stream@0.0.9",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/block-stream@0.0.9"
+    },
+    {
+      "name" : "nopt",
+      "version" : "3.0.6",
+      "purl" : "pkg:npm/nopt@3.0.6",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/nopt@3.0.6"
+    },
+    {
+      "name" : "node-addon-api",
+      "version" : "2.0.0",
+      "purl" : "pkg:npm/node-addon-api@2.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/node-addon-api@2.0.0"
+    },
+    {
+      "name" : "dotenv",
+      "version" : "5.0.1",
+      "purl" : "pkg:npm/dotenv@5.0.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/dotenv@5.0.1"
+    },
+    {
+      "name" : "tmp",
+      "version" : "0.0.33",
+      "purl" : "pkg:npm/tmp@0.0.33",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/tmp@0.0.33"
+    },
+    {
+      "name" : "sqlite",
+      "version" : "4.0.17",
+      "purl" : "pkg:npm/sqlite@4.0.17",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/sqlite@4.0.17"
+    },
+    {
+      "name" : "blessed",
+      "version" : "0.1.81",
+      "purl" : "pkg:npm/blessed@0.1.81",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/blessed@0.1.81"
+    },
+    {
+      "name" : "yauzl",
+      "version" : "2.10.0",
+      "purl" : "pkg:npm/yauzl@2.10.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/yauzl@2.10.0"
+    },
+    {
+      "name" : "buffer-crc32",
+      "version" : "0.2.13",
+      "purl" : "pkg:npm/buffer-crc32@0.2.13",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/buffer-crc32@0.2.13"
+    },
+    {
+      "name" : "fd-slicer",
+      "version" : "1.1.0",
+      "purl" : "pkg:npm/fd-slicer@1.1.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/fd-slicer@1.1.0"
+    },
+    {
+      "name" : "pend",
+      "version" : "1.2.0",
+      "purl" : "pkg:npm/pend@1.2.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/pend@1.2.0"
+    },
+    {
+      "name" : "xml-parser",
+      "version" : "1.2.1",
+      "purl" : "pkg:npm/xml-parser@1.2.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/xml-parser@1.2.1"
+    },
+    {
+      "name" : "debug",
+      "version" : "2.6.9",
+      "purl" : "pkg:npm/debug@2.6.9",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/debug@2.6.9"
+    },
+    {
+      "name" : "ms",
+      "version" : "2.0.0",
+      "purl" : "pkg:npm/ms@2.0.0",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/ms@2.0.0"
+    },
+    {
+      "name" : "async",
+      "version" : "3.1.1",
+      "purl" : "pkg:npm/async@3.1.1",
+      "type" : "library",
+      "bom-ref" : "pkg:npm/async@3.1.1"
+    }
+  ],
+  "dependencies" : [
+    {
+      "ref" : "scanned-application",
+      "dependsOn" : [
+        "pkg:npm/cli-worm"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/performance-now@2.1.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/uri-js@4.4.0",
+      "dependsOn" : [
+        "pkg:npm/punycode@2.1.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/oauth-sign@0.9.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/fs-minipass@1.2.7",
+      "dependsOn" : [
+        "pkg:npm/minipass@2.9.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/delayed-stream@1.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/forever-agent@0.6.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/string-width@1.0.2",
+      "dependsOn" : [
+        "pkg:npm/is-fullwidth-code-point@1.0.0",
+        "pkg:npm/code-point-at@1.1.0",
+        "pkg:npm/strip-ansi@3.0.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/balanced-match@1.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/delegates@1.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/yallist@3.1.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/caseless@0.12.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/extend@3.0.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/fast-deep-equal@3.1.3",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/isexe@2.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/tough-cookie@2.5.0",
+      "dependsOn" : [
+        "pkg:npm/psl@1.8.0",
+        "pkg:npm/punycode@2.1.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/json-schema-traverse@0.4.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/assert-plus@1.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/needle@2.5.2",
+      "dependsOn" : [
+        "pkg:npm/sax@1.2.4",
+        "pkg:npm/debug@3.2.6",
+        "pkg:npm/iconv-lite@0.4.24"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/sshpk@1.16.1",
+      "dependsOn" : [
+        "pkg:npm/safer-buffer@2.1.2",
+        "pkg:npm/bcrypt-pbkdf@1.0.2",
+        "pkg:npm/jsbn@0.1.1",
+        "pkg:npm/dashdash@1.14.1",
+        "pkg:npm/ecc-jsbn@0.1.2",
+        "pkg:npm/asn1@0.2.4",
+        "pkg:npm/assert-plus@1.0.0",
+        "pkg:npm/tweetnacl@0.14.5",
+        "pkg:npm/getpass@0.1.7"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/inflight@1.0.6",
+      "dependsOn" : [
+        "pkg:npm/once@1.4.0",
+        "pkg:npm/wrappy@1.0.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/osenv@0.1.5",
+      "dependsOn" : [
+        "pkg:npm/os-homedir@1.0.2",
+        "pkg:npm/os-tmpdir@1.0.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/graceful-fs@4.2.4",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/asynckit@0.4.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/npm-bundled@1.1.1",
+      "dependsOn" : [
+        "pkg:npm/npm-normalize-package-bin@1.0.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/abbrev@1.1.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/glob@7.1.6",
+      "dependsOn" : [
+        "pkg:npm/fs.realpath@1.0.0",
+        "pkg:npm/minimatch@3.0.4",
+        "pkg:npm/once@1.4.0",
+        "pkg:npm/path-is-absolute@1.0.1",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/inflight@1.0.6"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/minipass@2.9.0",
+      "dependsOn" : [
+        "pkg:npm/safe-buffer@5.1.2",
+        "pkg:npm/yallist@3.1.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/qs@6.5.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/node-addon-api@2.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/which@1.3.1",
+      "dependsOn" : [
+        "pkg:npm/isexe@2.0.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/util-deprecate@1.0.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/signal-exit@3.0.3",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/mkdirp@1.0.4",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/circular-json@0.5.9",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/is-typedarray@1.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/node-gyp@3.8.0",
+      "dependsOn" : [
+        "pkg:npm/request@2.88.2",
+        "pkg:npm/which@1.3.1",
+        "pkg:npm/osenv@0.1.5",
+        "pkg:npm/rimraf@2.7.1",
+        "pkg:npm/npmlog@4.1.2",
+        "pkg:npm/mkdirp@0.5.5",
+        "pkg:npm/semver@5.3.0",
+        "pkg:npm/tar@2.2.2",
+        "pkg:npm/fstream@1.0.12",
+        "pkg:npm/graceful-fs@4.2.4",
+        "pkg:npm/nopt@3.0.6",
+        "pkg:npm/glob@7.1.6"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/sqlite@4.0.17",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/wrappy@1.0.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/ansi-regex@2.1.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/npmlog@4.1.2",
+      "dependsOn" : [
+        "pkg:npm/set-blocking@2.0.0",
+        "pkg:npm/are-we-there-yet@1.1.5",
+        "pkg:npm/gauge@2.7.4",
+        "pkg:npm/console-control-strings@1.1.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/tmp@0.0.33",
+      "dependsOn" : [
+        "pkg:npm/os-tmpdir@1.0.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/punycode@2.1.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/minimist@1.2.5",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/rimraf@2.7.1",
+      "dependsOn" : [
+        "pkg:npm/glob@7.1.6"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/yauzl@2.10.0",
+      "dependsOn" : [
+        "pkg:npm/buffer-crc32@0.2.13",
+        "pkg:npm/fd-slicer@1.1.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/dotenv@5.0.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/strip-json-comments@2.0.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/nopt@4.0.3",
+      "dependsOn" : [
+        "pkg:npm/abbrev@1.1.1",
+        "pkg:npm/osenv@0.1.5"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/async@3.1.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/sqlite3@5.0.0",
+      "dependsOn" : [
+        "pkg:npm/node-pre-gyp@0.11.0",
+        "pkg:npm/node-gyp@3.8.0",
+        "pkg:npm/node-addon-api@2.0.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/safe-buffer@5.1.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/ajv@6.12.6",
+      "dependsOn" : [
+        "pkg:npm/fast-json-stable-stringify@2.1.0",
+        "pkg:npm/json-schema-traverse@0.4.1",
+        "pkg:npm/fast-deep-equal@3.1.3",
+        "pkg:npm/uri-js@4.4.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/has-unicode@2.0.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/dashdash@1.14.1",
+      "dependsOn" : [
+        "pkg:npm/assert-plus@1.0.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/har-validator@5.1.5",
+      "dependsOn" : [
+        "pkg:npm/ajv@6.12.6",
+        "pkg:npm/har-schema@2.0.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/fast-json-stable-stringify@2.1.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/is-fullwidth-code-point@1.0.0",
+      "dependsOn" : [
+        "pkg:npm/number-is-nan@1.0.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/strip-ansi@3.0.1",
+      "dependsOn" : [
+        "pkg:npm/ansi-regex@2.1.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/fd-slicer@1.1.0",
+      "dependsOn" : [
+        "pkg:npm/pend@1.2.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/npm-packlist@1.4.8",
+      "dependsOn" : [
+        "pkg:npm/npm-bundled@1.1.1",
+        "pkg:npm/npm-normalize-package-bin@1.0.1",
+        "pkg:npm/ignore-walk@3.0.3"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/semver@5.3.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/tunnel-agent@0.6.0",
+      "dependsOn" : [
+        "pkg:npm/safe-buffer@5.1.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/ecc-jsbn@0.1.2",
+      "dependsOn" : [
+        "pkg:npm/safer-buffer@2.1.2",
+        "pkg:npm/jsbn@0.1.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/process-nextick-args@2.0.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/ms@2.1.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/path-is-absolute@1.0.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/chownr@1.1.4",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/tar@4.4.13",
+      "dependsOn" : [
+        "pkg:npm/minizlib@1.3.3",
+        "pkg:npm/safe-buffer@5.1.2",
+        "pkg:npm/fs-minipass@1.2.7",
+        "pkg:npm/mkdirp@0.5.5",
+        "pkg:npm/chownr@1.1.4",
+        "pkg:npm/yallist@3.1.1",
+        "pkg:npm/minipass@2.9.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/pend@1.2.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/combined-stream@1.0.8",
+      "dependsOn" : [
+        "pkg:npm/delayed-stream@1.0.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/debug@2.6.9",
+      "dependsOn" : [
+        "pkg:npm/ms@2.0.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/fs.realpath@1.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/debug@3.2.6",
+      "dependsOn" : [
+        "pkg:npm/ms@2.1.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/aws4@1.11.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/extsprintf@1.3.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/xml-parser@1.2.1",
+      "dependsOn" : [
+        "pkg:npm/debug@2.6.9",
+        "pkg:npm/ms@2.0.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/cli-worm",
+      "dependsOn" : [
+        "pkg:npm/log4js@3.0.6",
+        "pkg:npm/sqlite3@5.0.0",
+        "pkg:npm/dotenv@5.0.1",
+        "pkg:npm/tmp@0.0.33",
+        "pkg:npm/sqlite@4.0.17",
+        "pkg:npm/blessed@0.1.81",
+        "pkg:npm/yauzl@2.10.0",
+        "pkg:npm/mkdirp@1.0.4",
+        "pkg:npm/xml-parser@1.2.1",
+        "pkg:npm/async@3.1.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/set-blocking@2.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/getpass@0.1.7",
+      "dependsOn" : [
+        "pkg:npm/assert-plus@1.0.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/gauge@2.7.4",
+      "dependsOn" : [
+        "pkg:npm/wide-align@1.1.3",
+        "pkg:npm/has-unicode@2.0.1",
+        "pkg:npm/string-width@1.0.2",
+        "pkg:npm/console-control-strings@1.1.0",
+        "pkg:npm/object-assign@4.1.1",
+        "pkg:npm/signal-exit@3.0.3",
+        "pkg:npm/aproba@1.2.0",
+        "pkg:npm/strip-ansi@3.0.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/are-we-there-yet@1.1.5",
+      "dependsOn" : [
+        "pkg:npm/delegates@1.0.0",
+        "pkg:npm/readable-stream@2.3.7"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/tar@2.2.2",
+      "dependsOn" : [
+        "pkg:npm/fstream@1.0.12",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/block-stream@0.0.9"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/json-schema@0.2.3",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/inherits@2.0.4",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/jsprim@1.4.1",
+      "dependsOn" : [
+        "pkg:npm/verror@1.10.0",
+        "pkg:npm/json-schema@0.2.3",
+        "pkg:npm/assert-plus@1.0.0",
+        "pkg:npm/extsprintf@1.3.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/blessed@0.1.81",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/form-data@2.3.3",
+      "dependsOn" : [
+        "pkg:npm/mime-types@2.1.27",
+        "pkg:npm/combined-stream@1.0.8",
+        "pkg:npm/asynckit@0.4.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/minimatch@3.0.4",
+      "dependsOn" : [
+        "pkg:npm/brace-expansion@1.1.11"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/deep-extend@0.6.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/code-point-at@1.1.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/iconv-lite@0.4.24",
+      "dependsOn" : [
+        "pkg:npm/safer-buffer@2.1.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/mime-db@1.44.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/tweetnacl@0.14.5",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/log4js@3.0.6",
+      "dependsOn" : [
+        "pkg:npm/streamroller@0.7.0",
+        "pkg:npm/circular-json@0.5.9",
+        "pkg:npm/debug@3.2.6",
+        "pkg:npm/date-format@1.2.0",
+        "pkg:npm/rfdc@1.1.4"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/ms@2.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/har-schema@2.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/readable-stream@2.3.7",
+      "dependsOn" : [
+        "pkg:npm/safe-buffer@5.1.2",
+        "pkg:npm/core-util-is@1.0.2",
+        "pkg:npm/string_decoder@1.1.1",
+        "pkg:npm/isarray@1.0.0",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/process-nextick-args@2.0.1",
+        "pkg:npm/util-deprecate@1.0.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/ignore-walk@3.0.3",
+      "dependsOn" : [
+        "pkg:npm/minimatch@3.0.4"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/sax@1.2.4",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/isstream@0.1.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/block-stream@0.0.9",
+      "dependsOn" : [
+        "pkg:npm/inherits@2.0.4"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/brace-expansion@1.1.11",
+      "dependsOn" : [
+        "pkg:npm/balanced-match@1.0.0",
+        "pkg:npm/concat-map@0.0.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/aproba@1.2.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/node-pre-gyp@0.11.0",
+      "dependsOn" : [
+        "pkg:npm/rc@1.2.8",
+        "pkg:npm/detect-libc@1.0.3",
+        "pkg:npm/rimraf@2.7.1",
+        "pkg:npm/npmlog@4.1.2",
+        "pkg:npm/needle@2.5.2",
+        "pkg:npm/mkdirp@0.5.5",
+        "pkg:npm/npm-packlist@1.4.8",
+        "pkg:npm/semver@5.3.0",
+        "pkg:npm/nopt@4.0.3",
+        "pkg:npm/tar@4.4.13"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/uuid@3.4.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/bcrypt-pbkdf@1.0.2",
+      "dependsOn" : [
+        "pkg:npm/tweetnacl@0.14.5"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/ini@1.3.5",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/aws-sign2@0.7.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/wide-align@1.1.3",
+      "dependsOn" : [
+        "pkg:npm/string-width@1.0.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/fstream@1.0.12",
+      "dependsOn" : [
+        "pkg:npm/rimraf@2.7.1",
+        "pkg:npm/mkdirp@0.5.5",
+        "pkg:npm/inherits@2.0.4",
+        "pkg:npm/graceful-fs@4.2.4",
+        "pkg:npm/mkdirp@1.0.4"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/asn1@0.2.4",
+      "dependsOn" : [
+        "pkg:npm/safer-buffer@2.1.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/streamroller@0.7.0",
+      "dependsOn" : [
+        "pkg:npm/readable-stream@2.3.7",
+        "pkg:npm/mkdirp@0.5.5",
+        "pkg:npm/debug@3.2.6",
+        "pkg:npm/date-format@1.2.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/mime-types@2.1.27",
+      "dependsOn" : [
+        "pkg:npm/mime-db@1.44.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/core-util-is@1.0.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/detect-libc@1.0.3",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/rfdc@1.1.4",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/string_decoder@1.1.1",
+      "dependsOn" : [
+        "pkg:npm/safe-buffer@5.1.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/concat-map@0.0.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/request@2.88.2",
+      "dependsOn" : [
+        "pkg:npm/form-data@2.3.3",
+        "pkg:npm/tough-cookie@2.5.0",
+        "pkg:npm/mime-types@2.1.27",
+        "pkg:npm/aws4@1.11.0",
+        "pkg:npm/aws-sign2@0.7.0",
+        "pkg:npm/qs@6.5.2",
+        "pkg:npm/isstream@0.1.2",
+        "pkg:npm/tunnel-agent@0.6.0",
+        "pkg:npm/forever-agent@0.6.1",
+        "pkg:npm/uuid@3.4.0",
+        "pkg:npm/oauth-sign@0.9.0",
+        "pkg:npm/http-signature@1.2.0",
+        "pkg:npm/safe-buffer@5.1.2",
+        "pkg:npm/is-typedarray@1.0.0",
+        "pkg:npm/har-validator@5.1.5",
+        "pkg:npm/combined-stream@1.0.8",
+        "pkg:npm/json-stringify-safe@5.0.1",
+        "pkg:npm/performance-now@2.1.0",
+        "pkg:npm/caseless@0.12.0",
+        "pkg:npm/extend@3.0.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/buffer-crc32@0.2.13",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/minizlib@1.3.3",
+      "dependsOn" : [
+        "pkg:npm/minipass@2.9.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/console-control-strings@1.1.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/psl@1.8.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/os-tmpdir@1.0.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/safer-buffer@2.1.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/object-assign@4.1.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/json-stringify-safe@5.0.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/npm-normalize-package-bin@1.0.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/os-homedir@1.0.2",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/once@1.4.0",
+      "dependsOn" : [
+        "pkg:npm/wrappy@1.0.2"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/jsbn@0.1.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/number-is-nan@1.0.1",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/nopt@3.0.6",
+      "dependsOn" : [
+        "pkg:npm/abbrev@1.1.1"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/isarray@1.0.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/mkdirp@0.5.5",
+      "dependsOn" : [
+        "pkg:npm/minimist@1.2.5"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/verror@1.10.0",
+      "dependsOn" : [
+        "pkg:npm/core-util-is@1.0.2",
+        "pkg:npm/extsprintf@1.3.0",
+        "pkg:npm/assert-plus@1.0.0"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/rc@1.2.8",
+      "dependsOn" : [
+        "pkg:npm/minimist@1.2.5",
+        "pkg:npm/strip-json-comments@2.0.1",
+        "pkg:npm/deep-extend@0.6.0",
+        "pkg:npm/ini@1.3.5"
+      ]
+    },
+    {
+      "ref" : "pkg:npm/date-format@1.2.0",
+      "dependsOn" : [ ]
+    },
+    {
+      "ref" : "pkg:npm/http-signature@1.2.0",
+      "dependsOn" : [
+        "pkg:npm/sshpk@1.16.1",
+        "pkg:npm/jsprim@1.4.1",
+        "pkg:npm/assert-plus@1.0.0"
+      ]
+    }
+  ],
+  "vulnerabilities" : [
+    {
+      "id" : null,
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/c08153de-a0ad-4212-963d-3de92eaab509?component-type=npm&component-name=ini&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/ini@1.3.5",
+      "description" : "CWE-471: Modification of Assumed-Immutable Data (MAID)",
+      "detail" : "The software does not properly protect an assumed-immutable element from being modified by an attacker.",
+      "ratings" : [
+        {
+          "score" : 7.4,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H"
+        }
+      ],
+      "cwes" : [
+        471
+      ],
+      "advisories" : [
+        {
+          "url" : "https://www.npmjs.com/advisories/1589"
+        }
+      ]
+    },
+    {
+      "id" : null,
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/3aef21de-3c46-4e8b-99a9-322df2a07bcd?component-type=npm&component-name=tar&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/tar@4.4.13",
+      "description" : "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "detail" : "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory.",
+      "ratings" : [
+        {
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes" : [
+        22
+      ],
+      "advisories" : [
+        {
+          "url" : "https://www.npmjs.com/advisories/1780"
+        }
+      ]
+    },
+    {
+      "id" : "CVE-2021-32803",
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/3a9868c9-8015-4e02-8728-e40ffbdfb9ca?component-type=npm&component-name=tar&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/tar@4.4.13",
+      "description" : "[CVE-2021-32803] The npm package \"tar\" (aka node-tar) before versions 6.1.2, 5.0.7, 4.4.15, and 3...",
+      "detail" : "The npm package \"tar\" (aka node-tar) before versions 6.1.2, 5.0.7, 4.4.15, and 3.2.3 has an arbitrary File Creation/Overwrite vulnerability via insufficient symlink protection. `node-tar` aims to guarantee that any file whose location would be modified by a symbolic link is not extracted. This is, in part, achieved by ensuring that extracted directories are not symlinks. Additionally, in order to prevent unnecessary `stat` calls to determine whether a given path is a directory, paths are cached when directories are created. This logic was insufficient when extracting tar files that contained both a directory and a symlink with the same name as the directory. This order of operations resulted in the directory being created and added to the `node-tar` directory cache. When a directory is present in the directory cache, subsequent calls to mkdir for that directory are skipped. However, this is also where `node-tar` checks for symlinks occur. By first creating a directory, and then replacing that directory with a symlink, it was thus possible to bypass `node-tar` symlink checks on directories, essentially allowing an untrusted tar file to symlink into an arbitrary location and subsequently extracting arbitrary files into that location, thus allowing arbitrary file creation and overwrite. This issue was addressed in releases 3.2.3, 4.4.15, 5.0.7 and 6.1.2.",
+      "ratings" : [
+        {
+          "score" : 8.1,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H"
+        }
+      ],
+      "advisories" : [
+        {
+          "url" : "https://nvd.nist.gov/vuln/detail/CVE-2021-32803"
+        }
+      ]
+    },
+    {
+      "id" : null,
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/1959185d-56a7-458d-8c5d-5fcd29948edb?component-type=npm&component-name=tar&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/tar@4.4.13",
+      "description" : "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "detail" : "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory.",
+      "ratings" : [
+        {
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes" : [
+        22
+      ],
+      "advisories" : [
+        {
+          "url" : "https://www.npmjs.com/advisories/1779"
+        }
+      ]
+    },
+    {
+      "id" : "CVE-2021-32804",
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/2ed58e95-a2c4-4ece-a507-c257e3ad451a?component-type=npm&component-name=tar&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/tar@4.4.13",
+      "description" : "[CVE-2021-32804] The npm package \"tar\" (aka node-tar) before versions 6.1.1, 5.0.6, 4.4.14, and 3...",
+      "detail" : "The npm package \"tar\" (aka node-tar) before versions 6.1.1, 5.0.6, 4.4.14, and 3.3.2 has a arbitrary File Creation/Overwrite vulnerability due to insufficient absolute path sanitization. node-tar aims to prevent extraction of absolute file paths by turning absolute paths into relative paths when the `preservePaths` flag is not set to `true`. This is achieved by stripping the absolute path root from any absolute file paths contained in a tar file. For example `/home/user/.bashrc` would turn into `home/user/.bashrc`. This logic was insufficient when file paths contained repeated path roots such as `////home/user/.bashrc`. `node-tar` would only strip a single path root from such paths. When given an absolute file path with repeating path roots, the resulting path (e.g. `///home/user/.bashrc`) would still resolve to an absolute path, thus allowing arbitrary file creation and overwrite. This issue was addressed in releases 3.2.2, 4.4.14, 5.0.6 and 6.1.1. Users may work around this vulnerability without upgrading by creating a custom `onentry` method which sanitizes the `entry.path` or a `filter` method which removes entries with absolute paths. See referenced GitHub Advisory for details. Be aware of CVE-2021-32803 which fixes a similar bug in later versions of tar.",
+      "ratings" : [
+        {
+          "score" : 8.1,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H"
+        }
+      ],
+      "advisories" : [
+        {
+          "url" : "https://nvd.nist.gov/vuln/detail/CVE-2021-32804"
+        }
+      ]
+    },
+    {
+      "id" : null,
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/cfd76b41-466a-4012-989f-7ad0d20ffde1?component-type=npm&component-name=tar&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/tar@4.4.13",
+      "description" : "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "detail" : "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory.",
+      "ratings" : [
+        {
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes" : [
+        22
+      ],
+      "advisories" : [
+        {
+          "url" : "https://www.npmjs.com/advisories/1781"
+        }
+      ]
+    },
+    {
+      "id" : null,
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/3aef21de-3c46-4e8b-99a9-322df2a07bcd?component-type=npm&component-name=tar&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/tar@2.2.2",
+      "description" : "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "detail" : "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory.",
+      "ratings" : [
+        {
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes" : [
+        22
+      ],
+      "advisories" : [
+        {
+          "url" : "https://www.npmjs.com/advisories/1780"
+        }
+      ]
+    },
+    {
+      "id" : "CVE-2021-32804",
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/2ed58e95-a2c4-4ece-a507-c257e3ad451a?component-type=npm&component-name=tar&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/tar@2.2.2",
+      "description" : "[CVE-2021-32804] The npm package \"tar\" (aka node-tar) before versions 6.1.1, 5.0.6, 4.4.14, and 3...",
+      "detail" : "The npm package \"tar\" (aka node-tar) before versions 6.1.1, 5.0.6, 4.4.14, and 3.3.2 has a arbitrary File Creation/Overwrite vulnerability due to insufficient absolute path sanitization. node-tar aims to prevent extraction of absolute file paths by turning absolute paths into relative paths when the `preservePaths` flag is not set to `true`. This is achieved by stripping the absolute path root from any absolute file paths contained in a tar file. For example `/home/user/.bashrc` would turn into `home/user/.bashrc`. This logic was insufficient when file paths contained repeated path roots such as `////home/user/.bashrc`. `node-tar` would only strip a single path root from such paths. When given an absolute file path with repeating path roots, the resulting path (e.g. `///home/user/.bashrc`) would still resolve to an absolute path, thus allowing arbitrary file creation and overwrite. This issue was addressed in releases 3.2.2, 4.4.14, 5.0.6 and 6.1.1. Users may work around this vulnerability without upgrading by creating a custom `onentry` method which sanitizes the `entry.path` or a `filter` method which removes entries with absolute paths. See referenced GitHub Advisory for details. Be aware of CVE-2021-32803 which fixes a similar bug in later versions of tar.",
+      "ratings" : [
+        {
+          "score" : 8.1,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H"
+        }
+      ],
+      "advisories" : [
+        {
+          "url" : "https://nvd.nist.gov/vuln/detail/CVE-2021-32804"
+        }
+      ]
+    },
+    {
+      "id" : null,
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/1959185d-56a7-458d-8c5d-5fcd29948edb?component-type=npm&component-name=tar&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/tar@2.2.2",
+      "description" : "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "detail" : "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory.",
+      "ratings" : [
+        {
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes" : [
+        22
+      ],
+      "advisories" : [
+        {
+          "url" : "https://www.npmjs.com/advisories/1779"
+        }
+      ]
+    },
+    {
+      "id" : "CVE-2021-32803",
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/3a9868c9-8015-4e02-8728-e40ffbdfb9ca?component-type=npm&component-name=tar&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/tar@2.2.2",
+      "description" : "[CVE-2021-32803] The npm package \"tar\" (aka node-tar) before versions 6.1.2, 5.0.7, 4.4.15, and 3...",
+      "detail" : "The npm package \"tar\" (aka node-tar) before versions 6.1.2, 5.0.7, 4.4.15, and 3.2.3 has an arbitrary File Creation/Overwrite vulnerability via insufficient symlink protection. `node-tar` aims to guarantee that any file whose location would be modified by a symbolic link is not extracted. This is, in part, achieved by ensuring that extracted directories are not symlinks. Additionally, in order to prevent unnecessary `stat` calls to determine whether a given path is a directory, paths are cached when directories are created. This logic was insufficient when extracting tar files that contained both a directory and a symlink with the same name as the directory. This order of operations resulted in the directory being created and added to the `node-tar` directory cache. When a directory is present in the directory cache, subsequent calls to mkdir for that directory are skipped. However, this is also where `node-tar` checks for symlinks occur. By first creating a directory, and then replacing that directory with a symlink, it was thus possible to bypass `node-tar` symlink checks on directories, essentially allowing an untrusted tar file to symlink into an arbitrary location and subsequently extracting arbitrary files into that location, thus allowing arbitrary file creation and overwrite. This issue was addressed in releases 3.2.3, 4.4.15, 5.0.7 and 6.1.2.",
+      "ratings" : [
+        {
+          "score" : 8.1,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:H"
+        }
+      ],
+      "advisories" : [
+        {
+          "url" : "https://nvd.nist.gov/vuln/detail/CVE-2021-32803"
+        }
+      ]
+    },
+    {
+      "id" : null,
+      "source" : {
+        "name" : "OSS Index",
+        "url" : "https://ossindex.sonatype.org/vulnerability/cfd76b41-466a-4012-989f-7ad0d20ffde1?component-type=npm&component-name=tar&utm_source=lift-scanner-cli&utm_medium=integration&utm_content=1.x"
+      },
+      "bom-ref" : "pkg:npm/tar@2.2.2",
+      "description" : "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+      "detail" : "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory.",
+      "ratings" : [
+        {
+          "score" : 7.5,
+          "severity" : "high",
+          "method" : "CVSSv3",
+          "vector" : "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "cwes" : [
+        22
+      ],
+      "advisories" : [
+        {
+          "url" : "https://www.npmjs.com/advisories/1781"
+        }
+      ]
+    }
+  ]
+}

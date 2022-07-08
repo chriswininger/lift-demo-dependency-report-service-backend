@@ -4,9 +4,7 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.sonatype.lift.dependencyreportservice.api.model.ReportModel
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.springframework.http.HttpStatus.*
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.server.ResponseStatusException
 import java.util.*
 import com.sonatype.lift.dependencyreportservice.api.APPLICATION_JSON
 import com.sonatype.lift.dependencyreportservice.api.services.CycloneDx.CycloneDxService
@@ -21,14 +19,15 @@ import javax.servlet.http.HttpServletResponse
 class CycloneDxController(
     val cycloneDxService: CycloneDxService
 ) {
-
-    val JSON = jacksonObjectMapper()
-
     private val logger: Logger = LoggerFactory.getLogger(CycloneDxController::class.java)
 
     @PostMapping()
     fun createReport(@RequestBody cycloneJson: Bom): ReportModel {
         logger.info("handling createReport request")
+
+        if (cycloneJson.dependencies.size > 200) {
+            throw RuntimeException("Too much!!!")
+        }
 
         return cycloneDxService.createNewReport(cycloneJson)
     }
